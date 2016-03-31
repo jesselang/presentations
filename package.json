@@ -1,0 +1,9 @@
+{
+  "name": "presentations",
+  "private": true,
+  "description": "Jesse Lang's collection of presentations",
+  "author": "Jesse Lang <jesse@jesselang.com>",
+  "dependencies": {
+    "reveal-md": "0.0.25"
+  }
+}
