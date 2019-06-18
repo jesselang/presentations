@@ -4,6 +4,6 @@
   "description": "Jesse Lang's collection of presentations",
   "author": "Jesse Lang <jesse@jesselang.com>",
   "dependencies": {
-    "reveal-md": "0.0.25"
+    "reveal-md": "3.0.4"
   }
 }
