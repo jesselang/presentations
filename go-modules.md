@@ -1,6 +1,8 @@
 # Go Modules
 ### Package Dependency Management
 
+jesselang.com | @jesselang
+
 ---
 
 ###  In The Beginning There Was GOPATH
@@ -111,6 +113,15 @@ That is deceptively simple.
 
 ---
 
+### Minimal Version Selection
+
+Your app requires Modules A and B. Module A requires Module C@v1.1.1,
+and Module B requires Module C@v1.2.2. Module C just released v1.3.3 today.
+Go will choose the minimum required version, favoring fully reproducible
+builds, instead of selecting the latest minor version.
+
+---
+
 ### Have Module, Will Release
 
 ```sh
@@ -121,7 +132,13 @@ That is deceptively simple.
 
 # get all dependencies and build
 % go build
+% go test all
+% go mod tidy
 
+% git commit ...
+# The "v" prefix on the tag is really important.
+% git tag -am "Version 1.2.14" v1.2.14
+% git push && git push --tags
 ```
 
 ---
@@ -141,6 +158,7 @@ Works with vgo, dep, godep, glide, govendor, etc.
 # to go.mod as needed.
 % go build
 % go test
+% go get github.com/spf13/cobra/cobra@v0.0.4 # downgrade a module
 % go list -m all  # prints the current module’s dependencies.
 % go mod tidy # removes unused dependencies.
 ```
@@ -171,8 +189,6 @@ replace example.com/project/foo => ../foo
 ### Questions?
 
 @jesselang on Twitter
-
-https://github.com/jesselang/presentations
 
 ---
 
